@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — MB Framework</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; color: #1a1a1a; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e8e8e8; background: #16181c; } }
+  h1 { font-size: 1.75rem; margin: 0 0 .3rem; letter-spacing: -.02em; }
+  .sub { color: #6b7280; margin: 0 0 2.5rem; }
+  @media (prefers-color-scheme: dark) { .sub { color: #9aa3af; } }
+  h2 { font-size: 1.05rem; margin: 2.1rem 0 .55rem; }
+  ul { padding-left: 1.2rem; } li { margin: .3rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em;
+         background: rgba(127,127,127,.14); padding: .12em .35em; border-radius: 3px; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(127,127,127,.28);
+           color: #6b7280; font-size: .92rem; }
+  @media (prefers-color-scheme: dark) { footer { color: #9aa3af; } }
+  a { color: #1a56db; } @media (prefers-color-scheme: dark) { a { color: #7aa5f7; } }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="sub">MB Framework · last updated 29 August 2026</p>
+
+<h2>1. Scope</h2>
+<p>
+  This policy covers the MB Framework application and its use of Google APIs. MB Framework
+  is a private, single-user system operated by its author for personal equity research. It
+  has no other users and is not offered as a service.
+</p>
+
+<h2>2. Information collected</h2>
+<p>
+  <strong>The application collects no personal information from anyone.</strong> It has no
+  sign-up, no accounts, no analytics, no cookies, no tracking and no logging of visitors.
+</p>
+<p>
+  The only data it handles is public market information about listed companies — filings,
+  announcements and price history — together with the author's own analysis of it. None of
+  that is personal data about any individual.
+</p>
+
+<h2>3. Google user data accessed</h2>
+<p>
+  The application requests the Google Drive scope
+  <code>https://www.googleapis.com/auth/drive</code>, authorised once by the account owner,
+  and uses it solely to maintain the account owner's own backups. Specifically it:
+</p>
+<ul>
+  <li>creates a folder named <code>MB_Framework_Backups</code> in the owner's Drive;</li>
+  <li>uploads compressed backup archives into that folder;</li>
+  <li>lists and deletes the archives it previously uploaded, to enforce a retention limit.</li>
+</ul>
+<p>
+  It does not read, index, modify, download or transmit any other file in the Drive, and it
+  does not access any other Google service or Google account. The access is used exclusively
+  to provide the backup feature described on the
+  <a href="index.html">home page</a> and for no other purpose.
+</p>
+
+<h2>4. How the data is used</h2>
+<p>
+  Backup archives are written to Google Drive so that the author's research data survives
+  the loss of the server it normally lives on. They are read back only during a restore.
+</p>
+
+<h2>5. Sharing</h2>
+<p>
+  <strong>No data is shared, sold, transferred or disclosed to any third party</strong> — not
+  for advertising, not for analytics, not for AI or machine-learning training, and not for
+  any other purpose. There is no third party involved. The only parties are the author's own
+  server and the author's own Google Drive.
+</p>
+
+<h2>6. Storage, security and retention</h2>
+<p>
+  Archives are stored in the account owner's private Google Drive, visible to no one else,
+  and on the author's own server. The OAuth credential is held in the rclone configuration
+  file on that server, readable only by its operating-system owner.
+</p>
+<p>
+  Archives are rotated automatically on a fixed retention schedule: the daily tier keeps 14
+  copies, the weekly tier 5, and the monthly tier 3. Older archives are deleted permanently
+  by the application itself.
+</p>
+
+<h2>7. Revoking access, and deletion</h2>
+<p>
+  Access can be revoked at any time at
+  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
+  which immediately and permanently ends the application's ability to reach the Drive. The
+  stored archives are ordinary files in the owner's Drive and can be deleted at any time
+  from Drive itself.
+</p>
+
+<h2>8. Children</h2>
+<p>
+  The application is not directed at children and has no users other than its author.
+</p>
+
+<h2>9. Changes</h2>
+<p>
+  If this policy changes, the revised version will be published at this address with an
+  updated date above.
+</p>
+
+<h2>10. Contact</h2>
+<p>
+  Questions about this policy or about the application:
+  <a href="mailto:sankarnarayanan979@gmail.com">sankarnarayanan979@gmail.com</a>
+</p>
+
+<footer>
+  <p><a href="index.html">← MB Framework</a></p>
+</footer>
+
+</body>
+</html>

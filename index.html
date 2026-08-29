@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MB Framework</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; color: #1a1a1a; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e8e8e8; background: #16181c; } }
+  h1 { font-size: 1.9rem; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  .sub { color: #6b7280; margin: 0 0 2.5rem; }
+  @media (prefers-color-scheme: dark) { .sub { color: #9aa3af; } }
+  h2 { font-size: 1.1rem; margin: 2.25rem 0 .6rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em;
+         background: rgba(127,127,127,.14); padding: .12em .35em; border-radius: 3px; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(127,127,127,.28);
+           color: #6b7280; font-size: .92rem; }
+  @media (prefers-color-scheme: dark) { footer { color: #9aa3af; } }
+  a { color: #1a56db; } @media (prefers-color-scheme: dark) { a { color: #7aa5f7; } }
+</style>
+</head>
+<body>
+
+<h1>MB Framework</h1>
+<p class="sub">A personal equity-research pipeline for the Indian market, and the backup helper that keeps its data recoverable.</p>
+
+<h2>What this application is</h2>
+<p>
+  MB Framework is a private, single-user system that collects and analyses public market
+  data for Indian listed companies — company fundamentals, corporate-action filings and
+  daily price history. It runs unattended on one server belonging to its author. It is not
+  a product, it is not offered to other people, and it has no users other than its author.
+</p>
+
+<h2>Why it asks for Google Drive access</h2>
+<p>
+  The framework's data lives on a single machine. If that machine is lost, so is several
+  years of collected market history that cannot be re-fetched from its original sources.
+  So the framework takes scheduled backups and copies them off the machine.
+</p>
+<p>
+  Google Drive is that offsite destination. The application uses the Google Drive API,
+  through <a href="https://rclone.org/">rclone</a>, to do three things and nothing else:
+</p>
+<ul>
+  <li>create a single folder named <code>MB_Framework_Backups</code> in the author's own Drive;</li>
+  <li>upload compressed backup archives into that folder;</li>
+  <li>list and delete <em>its own older archives</em>, so that the retention limit is respected.</li>
+</ul>
+<p>
+  The data flows one way — from the author's server into the author's own Drive. Nothing is
+  read from Drive during normal operation, and nothing is sent anywhere else.
+</p>
+
+<h2>Who can use it</h2>
+<p>
+  One person: the account owner. The OAuth client exists so that the author's own server can
+  write to the author's own Google Drive. There is no sign-up, no shared instance, and no
+  mechanism by which another person's data could reach it.
+</p>
+
+<h2>Privacy</h2>
+<p>
+  The application collects no personal information, stores nothing about anyone, and shares
+  no data with third parties. This is set out in full in the
+  <a href="privacy.html">Privacy Policy</a>.
+</p>
+
+<footer>
+  <p>
+    <a href="privacy.html">Privacy Policy</a><br>
+    Contact: <a href="mailto:sankarnarayanan979@gmail.com">sankarnarayanan979@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
